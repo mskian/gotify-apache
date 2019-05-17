@@ -1,0 +1,15 @@
+[Unit]
+Description=Start Gotify - a simple server for sending and receiving messages
+Requires=network.target
+After=network.target
+
+[Service]
+Type=simple
+User=<user>
+WorkingDirectory=/var/www/gotifypush
+ExecStart=/bin/bash /var/www/gotifypush/start.sh
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

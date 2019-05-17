@@ -1,0 +1,40 @@
+# Example configuration file for the server.
+# Save it to `config.yml` when edited
+
+server:
+  listenaddr: "" # the address to bind on, leave empty to bind on all addresses
+  port: 9000 # the port the HTTP server will listen on
+
+  ssl:
+    enabled: false # if https should be enabled
+    redirecttohttps: false # redirect to https if site is accessed by http
+    listenaddr: "" # the address to bind on, leave empty to bind on all addresses
+    port: 443 # the https port
+    certfile: # the cert file (leave empty when using letsencrypt)
+    certkey: # the cert key (leave empty when using letsencrypt)
+    letsencrypt:
+      enabled: false # if the certificate should be requested from letsencrypt
+      accepttos: false # if you accept the tos from letsencrypt
+      cache:  # the directory of the cache from letsencrypt
+      hosts: # the hosts for which letsencrypt should request certificates
+      - push.example.com
+  
+  responseheaders: # response headers are added to every response (default: none)
+    #Access-Control-Allow-Origin: "*"
+    #Access-Control-Allow-Methods: "GET,POST"
+
+  stream:
+    allowedorigins: # allowed origins for websocket connections (same origin is always allowed)
+      - ".+.example.com"
+      - "push.example.com"
+
+database: # for database see (configure database section)
+  dialect: mysql
+  connection: root:DBPASS@tcp(127.0.0.1)/gotifydb?charset=utf8&parseTime=True&loc=Local
+
+defaultuser: # on database creation, gotify creates an admin user
+  name: admin # the username of the default user
+  pass: admin # the password of the default user
+passstrength: 10 # the bcrypt password strength (higher = better but also slower)
+uploadedimagesdir: /var/www/gotifypush/data/images # the directory for storing uploaded images
+pluginsdir: /var/www/gotifypush/data/plugins # the directory where plugin resides
