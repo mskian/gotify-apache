@@ -359,6 +359,10 @@ sudo systemctl restart gotifypush
 
 - That's Successfully we Install and Setup Gotify on Apache Server without Docker
 
+## Update Gotify
+
+Update Gotify to the Latest Version - <https://github.com/mskian/gotify-apache/blob/master/upgrade.md>
+
 ## LICENSE
 
 MIT
