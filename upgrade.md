@@ -45,6 +45,12 @@ chmod +x gotify-linux-amd64
 ./start.sh
 ```
 
+- Remove the Downloaded assets & Older version
+
+```bash
+rm -rf gotify-linux-amd64.zip  LICENSE licenses gotify-linux-amd64 gotify-linux-amd64-old
+```
+
 - if your installation Test is passed Press CTRL + C to Stop & Start the systemd Service
 
 ```bash
