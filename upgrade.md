@@ -33,6 +33,10 @@ sudo mv gotify-linux-amd64 gotify-linux-amd64-old
 wget https://github.com/gotify/server/releases/download/<Latest-Release>/gotify-linux-amd64.zip
 ```
 
+```bash
+unzip /gotify-linux-amd64.zip
+```
+
 - Give Execute Permission
 
 ```bash

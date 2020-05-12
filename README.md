@@ -109,13 +109,23 @@ server:
       - push.example.com
   
   responseheaders: # response headers are added to every response (default: none)
-    #Access-Control-Allow-Origin: "*"
-    #Access-Control-Allow-Methods: "GET,POST"
+    Strict-Transport-Security: max-age=31536000
+    X-Xss-Protection: 1; mode=block
+
+  cors: # Sets cors headers only when needed and provides support for multiple allowed origins. Overrides Access-Control-* Headers in response headers.
+    alloworigins:
+      # - "example.com"
+    allowmethods:
+      # - "GET"
+      # - "POST"
+    allowheaders:
+      # - "Authorization"
+      # - "content-type"
 
   stream:
     allowedorigins: # allowed origins for websocket connections (same origin is always allowed)
-      - ".+.example.com"
-      - "push.example.com"
+  #    - ".+.example.com"
+  #    - "push.example.com"
 
 database: # for database see (configure database section)
   dialect: mysql
